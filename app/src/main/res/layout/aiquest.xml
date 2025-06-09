@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aiquest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".aiquest">
+
+    <!-- 헤더 -->
+    <LinearLayout
+        android:id="@+id/navigationbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/navigation2"
+        android:orientation="vertical"
+        android:paddingTop="61dp"
+        android:paddingBottom="9dp">
+
+        <LinearLayout
+            android:id="@+id/aiask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backicon"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_horizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:orientation="vertical"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:id="@+id/ainame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI 질문하기"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 메시지 리스트 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/message_input_layout"
+        android:layout_below="@id/navigationbox"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+
+    <!-- 입력창 -->
+    <LinearLayout
+        android:id="@+id/message_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etUserInput"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/aiwrite"
+            android:hint="메시지를 입력하세요"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp" />
+
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="전송"
+            android:src="@mipmap/ai"
+            android:scaleType="fitCenter"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+</RelativeLayout>
