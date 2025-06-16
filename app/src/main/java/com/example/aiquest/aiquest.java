@@ -25,7 +25,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-//새로이 바꾸기만 하면
 public class aiquest extends AppCompatActivity {
 
     private EditText etUserInput;
